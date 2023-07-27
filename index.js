@@ -7,27 +7,33 @@ const { v4: uuid } = require("uuid");
 const app = express();
 
 app.get("/character", (req, res) => {
-    const id = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-    const url = [
-        'https://i.imgur.com/qaQfzAI.jpg', 
-        'https://i.imgur.com/5ZBoGx6.jpg', 
-        'https://i.imgur.com/wUaIBfG.jpg',
-        'https://i.imgur.com/LFp8NxU.jpg',
-        'https://i.imgur.com/4xgkxmT.jpg',
-        'https://i.imgur.com/P8pdKRB.jpg',
-        'https://i.imgur.com/mBPkofL.jpg',
-        'https://i.imgur.com/HfkQ3ll.jpg',
-        'https://i.imgur.com/0XEGPFW.jpg',
-        'https://i.imgur.com/TZkaaBa.jpg',
-        'https://i.imgur.com/dzPFaZZ.jpg',
-        'https://i.imgur.com/UwzGt0W.jpg'
-    ];
-   
-    res.json({
-        id: _.sample(id),
-        url: _.sample(url),
-    });
-
+  res.json([
+    {
+      id: 2594029,
+      url: "https://www.tvmaze.com/episodes/2594029/the-simpsons-35x01-tba",
+      name: "TBA",
+      season: 35,
+      number: 1,
+      type: "regular",
+      airdate: "2023-10-01",
+      airtime: "20:00",
+      airstamp: "2023-10-02T00:00:00+00:00",
+      runtime: 30,
+      rating: {
+        average: null,
+      },
+      image: null,
+      summary: null,
+      _links: {
+        self: {
+          href: "https://api.tvmaze.com/episodes/2594029",
+        },
+        show: {
+          href: "https://api.tvmaze.com/shows/83",
+        },
+      },
+    },
+  ]);
 });
 
-app.listen(3000, () => console.log('API Server is running...'));
+app.listen(3000, () => console.log("API Server is running..."));
